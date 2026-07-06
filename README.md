@@ -13,3 +13,10 @@ docker run -it myridia/opencode bash
 kitty docker run -it -v /home/veto/ai:/root/ai  myridia/opencode bash
 ```
 
+
+## Extra Repository ##
+```
+ git remote add codeberg ssh://git@codeberg.org/veto/opencode_docker
+ git push codeberg -f
+
+```
