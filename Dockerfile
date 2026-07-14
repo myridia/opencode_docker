@@ -18,7 +18,8 @@ RUN apt-get update -y && apt-get install -y \
   valgrind \
   strace \
   ltrace \
-  emacs-nox 
+  emacs-nox \
+  git 
   
 RUN curl -fsSL https://opencode.ai/install | bash
 RUN . /root/.bashrc
