@@ -19,7 +19,9 @@ RUN apt-get update -y && apt-get install -y \
   strace \
   ltrace \
   emacs-nox \
-  git 
+  git \
+  proxychains4 \
+  redsocks 
   
 RUN curl -fsSL https://opencode.ai/install | bash
 RUN . /root/.bashrc
