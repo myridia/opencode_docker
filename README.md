@@ -12,7 +12,10 @@ docker run -it myridia/opencode bash
 ```
 kitty docker run -it -v /home/veto/ai:/root/ai  myridia/opencode bash
 ```
-
+## Enter 
+```
+opencode
+```
 
 ## Extra Repository ##
 ```

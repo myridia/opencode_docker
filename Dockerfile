@@ -1,5 +1,5 @@
-FROM debian:bookworm
-LABEL version="0.1"
+FROM debian:latest
+LABEL version="0.2"
 MAINTAINER veto<veto@myridia.com>
 RUN apt-get update -y && apt-get install -y \
   curl\ 
