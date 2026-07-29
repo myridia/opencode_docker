@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:bookworm
 LABEL version="0.1"
 MAINTAINER veto<veto@myridia.com>
 RUN apt-get update -y && apt-get install -y \
