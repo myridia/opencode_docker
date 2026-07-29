@@ -1,10 +1,9 @@
 #!/bin/bash
-
-# Run your opencode command
-# Replace this with the actual command/script you want to execute first.
-# For example, if 'opencode' is a command you installed:
-proxychains4 /root/.opencode/bin/opencode # Or just 'opencode' if it's in PATH
-
-# The "$@" will capture any arguments passed to the container (like 'bash')
-# and execute them. If 'bash' is passed, it will run bash.
+set -e
+export UNIQUE_ID=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 12)
+echo "Initializing instance: $UNIQUE_ID"
+rm -rf /root/.opencode/cache/*
+rm -f /root/.opencode/tmp/*.lock
+nohup proxychains4 /root/.opencode/bin/opencode >"/var/log/opencode_$UNIQUE_ID.log" 2>&1 &
+sleep 2
 exec "$@"
