@@ -3,19 +3,25 @@
 
 
 ## How to use 
-Run this command in a OSC52-compatible terminal like Kitty, Wezterm or Alacritty
+1. Run this command in a OSC52-compatible terminal like Kitty, Wezterm or Alacritty
 ```
 docker run -it myridia/opencode bash
+```
+
+2. Type into the Terminal: 
+```
+opencode
 ```
 
 ### Example with kitty and mount my folder ai to the docker home root directory 
 ```
 kitty docker run -it -v /home/veto/ai:/root/ai  myridia/opencode bash
 ```
-## Enter 
+## Enter into the Terminal
 ```
 opencode
 ```
+
 
 ## Extra Repository ##
 ```
