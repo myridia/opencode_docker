@@ -21,6 +21,7 @@ RUN apt-get update -y && apt-get install -y \
   emacs-nox \
   git \
   proxychains4 \
+  jq \
   redsocks 
   
 RUN curl -fsSL https://opencode.ai/install | bash
