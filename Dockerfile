@@ -2,7 +2,8 @@ FROM debian:latest
 LABEL version="0.2"
 MAINTAINER veto<veto@myridia.com>
 RUN apt-get update -y && apt-get install -y \
-  curl\ 
+  curl \
+  ca-certificates \
   tree \
   iputils-ping \
   build-essential \
@@ -22,7 +23,10 @@ RUN apt-get update -y && apt-get install -y \
   git \
   proxychains4 \
   jq \
-  redsocks 
+  redsocks \
+  mariadb-client \
+  inotify-tools
+  
   
 RUN curl -fsSL https://opencode.ai/install | bash
 RUN . /root/.bashrc
