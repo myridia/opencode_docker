@@ -25,7 +25,10 @@ RUN apt-get update -y && apt-get install -y \
   jq \
   redsocks \
   mariadb-client \
-  inotify-tools
+  inotify-tools \
+  gcc \ 
+  python3-dev \ 
+  freetds-dev
   
   
 RUN curl -fsSL https://opencode.ai/install | bash
