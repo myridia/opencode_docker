@@ -28,7 +28,9 @@ RUN apt-get update -y && apt-get install -y \
   inotify-tools \
   gcc \ 
   python3-dev \ 
-  freetds-dev
+  freetds-dev \
+  chromium \
+  python3-pil
   
   
 RUN curl -fsSL https://opencode.ai/install | bash
