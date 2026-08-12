@@ -30,7 +30,10 @@ RUN apt-get update -y && apt-get install -y \
   python3-dev \ 
   freetds-dev \
   chromium \
-  python3-pil
+  python3-pil \
+  firefox-esr \
+  python3-selenium \ 
+  python3-websocket
   
   
 RUN curl -fsSL https://opencode.ai/install | bash
