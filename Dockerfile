@@ -33,7 +33,8 @@ RUN apt-get update -y && apt-get install -y \
   python3-pil \
   firefox-esr \
   python3-selenium \ 
-  python3-websocket
+  python3-websocket \
+  nodejs 
   
   
 RUN curl -fsSL https://opencode.ai/install | bash
