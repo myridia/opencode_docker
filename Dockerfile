@@ -34,7 +34,8 @@ RUN apt-get update -y && apt-get install -y \
   firefox-esr \
   python3-selenium \ 
   python3-websocket \
-  nodejs 
+  nodejs \
+  pipx
   
   
 RUN curl -fsSL https://opencode.ai/install | bash
