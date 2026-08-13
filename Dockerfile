@@ -58,8 +58,8 @@ RUN apt-get update -y && apt-get install -y \
   netcat-openbsd \
   socat \
   telnet \
-  net-tools \
-  && rm -rf /var/lib/apt/lists/*
+  net-tools 
+  
   
 RUN python3 -m pip install --no-cache-dir --break-system-packages \
   requests \
@@ -69,8 +69,8 @@ RUN python3 -m pip install --no-cache-dir --break-system-packages \
   selenium \
   websocket-client \
   Pillow \
-  pymssql \
-  && rm -rf ~/.cache/pip
+  pymssql 
+  
   
 RUN curl -fsSL https://opencode.ai/install | bash
 RUN . /root/.bashrc
