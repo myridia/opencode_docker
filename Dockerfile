@@ -9,6 +9,7 @@ RUN apt-get update -y && apt-get install -y \
   build-essential \
   wget \
   unzip \
+  zip \
   tar \
   pkg-config \
   libssl-dev \
@@ -20,23 +21,56 @@ RUN apt-get update -y && apt-get install -y \
   strace \
   ltrace \
   emacs-nox \
+  vim \
   git \
+  git-lfs \
   proxychains4 \
   jq \
   redsocks \
   mariadb-client \
+  postgresql-client \
+  sqlite3 \
+  redis-tools \
   inotify-tools \
-  gcc \ 
-  python3-dev \ 
+  gcc \
+  python3-dev \
+  python3-pip \
+  python3-venv \
+  pipx \
   freetds-dev \
   chromium \
-  python3-pil \
+  chromium-driver \
   firefox-esr \
-  python3-selenium \ 
-  python3-websocket \
+  geckodriver \
+  fonts-liberation \
+  tesseract-ocr \
+  poppler-utils \
+  imagemagick \
   nodejs \
-  pipx
+  npm \
+  ripgrep \
+  tmux \
+  htop \
+  rsync \
+  dnsutils \
+  whois \
+  traceroute \
+  netcat-openbsd \
+  socat \
+  telnet \
+  net-tools \
+  && rm -rf /var/lib/apt/lists/*
   
+RUN python3 -m pip install --no-cache-dir --break-system-packages \
+  requests \
+  beautifulsoup4 \
+  lxml \
+  cryptography \
+  selenium \
+  websocket-client \
+  Pillow \
+  pymssql \
+  && rm -rf ~/.cache/pip
   
 RUN curl -fsSL https://opencode.ai/install | bash
 RUN . /root/.bashrc
