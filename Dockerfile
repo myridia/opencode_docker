@@ -39,9 +39,7 @@ RUN apt-get update -y && apt-get install -y \
   pipx \
   freetds-dev \
   chromium \
-  chromium-driver \
   firefox-esr \
-  geckodriver \
   fonts-liberation \
   tesseract-ocr \
   poppler-utils \
@@ -58,7 +56,8 @@ RUN apt-get update -y && apt-get install -y \
   netcat-openbsd \
   socat \
   telnet \
-  net-tools 
+  net-tools \
+  && rm -rf /var/lib/apt/lists/*
   
   
 RUN python3 -m pip install --no-cache-dir --break-system-packages \
