@@ -67,7 +67,7 @@ RUN apt-get update -y && apt-get install -y \
   tar \
   dnsutils \
   traceroute \
-  redis-tools \
+  redis-tools 
   
   
 RUN python3 -m pip install --no-cache-dir --break-system-packages \
