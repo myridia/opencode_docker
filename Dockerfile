@@ -2,64 +2,72 @@ FROM debian:latest
 LABEL version="0.2"
 MAINTAINER veto<veto@myridia.com>
 RUN apt-get update -y && apt-get install -y \
+  bat \
+  build-essential \
+  chromium \
   curl \
   ca-certificates \
-  tree \
-  iputils-ping \
-  build-essential \
-  wget \
-  unzip \
-  zip \
-  tar \
-  pkg-config \
-  libssl-dev \
-  zlib1g-dev \
-  libffi-dev \
-  libreadline-dev \
-  gdb \
-  valgrind \
-  strace \
-  ltrace \
   emacs-nox \
-  vim \
+  fd-find \
+  ffmpeg \
+  file \
+  fonts-liberation \
+  firefox-esr \
+  freetds-dev \
+  fzf \
+  gcc \
+  gdb \
+  gh \
   git \
   git-lfs \
-  proxychains4 \
-  jq \
-  redsocks \
-  mariadb-client \
-  postgresql-client \
-  sqlite3 \
-  redis-tools \
+  htop \
+  httpie \
+  imagemagick \
   inotify-tools \
-  gcc \
+  iputils-ping \
+  jq \
+  lazygit \
+  libffi-dev \
+  libreadline-dev \
+  libssl-dev \
+  locales \
+  mariadb-client \
+  net-tools \
+  netcat-openbsd \
+  nodejs \
+  npm \
+  pgcli \
+  pkg-config \
+  poppler-utils \
+  postgresql-client \
+  proxychains4 \
   python3-dev \
   python3-pip \
   python3-venv \
   pipx \
-  freetds-dev \
-  chromium \
-  firefox-esr \
-  fonts-liberation \
-  tesseract-ocr \
-  poppler-utils \
-  imagemagick \
-  nodejs \
-  npm \
+  redsocks \
   ripgrep \
-  tmux \
-  htop \
   rsync \
-  dnsutils \
-  whois \
-  traceroute \
-  netcat-openbsd \
+  shellcheck \
   socat \
-  telnet \
-  net-tools \
-  ffmpeg \ 
-  imagemagick \ 
-  && rm -rf /var/lib/apt/lists/*
+  sqlite3 \
+  strace \
+  ltrace \
+  tesseract-ocr \
+  tmux \
+  tree \
+  unzip \
+  valgrind \
+  vim \
+  wget \
+  whois \
+  xz-utils \
+  zlib1g-dev \
+  zip \
+  tar \
+  dnsutils \
+  traceroute \
+  redis-tools \
   
   
 RUN python3 -m pip install --no-cache-dir --break-system-packages \
