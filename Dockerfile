@@ -57,6 +57,8 @@ RUN apt-get update -y && apt-get install -y \
   socat \
   telnet \
   net-tools \
+  ffmpeg \ 
+  imagemagick \ 
   && rm -rf /var/lib/apt/lists/*
   
   
