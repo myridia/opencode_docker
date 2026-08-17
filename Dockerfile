@@ -72,13 +72,25 @@ RUN apt-get update -y && apt-get install -y \
   
 RUN python3 -m pip install --no-cache-dir --break-system-packages \
   requests \
+  httpx \
   beautifulsoup4 \
   lxml \
   cryptography \
   selenium \
   websocket-client \
   Pillow \
-  pymssql 
+  pymssql \
+  psycopg2-binary \
+  redis \
+  pyyaml \
+  python-dotenv \
+  rich \
+  ipython \
+  pytest \
+  ruff \
+  mypy \
+  pipdeptree \
+  && rm -rf /root/.cache/pip
   
   
 RUN curl -fsSL https://opencode.ai/install | bash
