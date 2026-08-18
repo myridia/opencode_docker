@@ -68,7 +68,7 @@ RUN apt-get update -y && apt-get install -y \
   dnsutils \
   traceroute \
   redis-tools \
-  ibxml2-dev \
+  libxml2-dev \
   libxslt1-dev \
   libpq-dev 
  
