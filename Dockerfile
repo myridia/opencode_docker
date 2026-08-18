@@ -73,7 +73,7 @@ RUN apt-get update -y && apt-get install -y \
   libpq-dev 
  
 
-RUN python3 -m pip install --no-cache-dir --break-system-packages \
+RUN python3 -m pip install --no-cache-dir --break-system-packages  --ignore-installed urllib3 \
   requests \
   httpx \
   beautifulsoup4 \
