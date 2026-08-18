@@ -68,7 +68,10 @@ RUN apt-get update -y && apt-get install -y \
   dnsutils \
   traceroute \
   redis-tools \
-  && rm -rf /var/lib/apt/lists/*
+  ibxml2-dev \
+  libxslt1-dev \
+  libpq-dev 
+ 
 
 RUN python3 -m pip install --no-cache-dir --break-system-packages \
   requests \
@@ -89,8 +92,8 @@ RUN python3 -m pip install --no-cache-dir --break-system-packages \
   pytest \
   ruff \
   mypy \
-  pipdeptree \
-  && rm -rf /root/.cache/pip
+  pipdeptree 
+ 
   
   
 RUN curl -fsSL https://opencode.ai/install | bash
