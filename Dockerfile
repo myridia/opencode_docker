@@ -73,6 +73,7 @@ RUN apt-get update -y && apt-get install -y \
   libpq-dev \
   docker-cli \
   docker.io
+
  
 
 RUN python3 -m pip install --no-cache-dir --break-system-packages  --ignore-installed urllib3 \
