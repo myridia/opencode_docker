@@ -70,7 +70,9 @@ RUN apt-get update -y && apt-get install -y \
   redis-tools \
   libxml2-dev \
   libxslt1-dev \
-  libpq-dev 
+  libpq-dev \
+  docker-cli \
+  docker.io
  
 
 RUN python3 -m pip install --no-cache-dir --break-system-packages  --ignore-installed urllib3 \
