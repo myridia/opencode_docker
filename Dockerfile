@@ -95,10 +95,14 @@ RUN python3 -m pip install --no-cache-dir --break-system-packages  --ignore-inst
   pytest \
   ruff \
   mypy \
-  pipdeptree 
- 
-  
-  
+  pipdeptree
+
+
+RUN pipx install poetry
+ENV PATH="/root/.local/bin:${PATH}"
+
+
+
 RUN curl -fsSL https://opencode.ai/install | bash
 RUN . /root/.bashrc
 COPY entrypoint.sh /usr/local/bin/
