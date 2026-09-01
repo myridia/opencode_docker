@@ -99,7 +99,12 @@ RUN python3 -m pip install --no-cache-dir --break-system-packages  --ignore-inst
 
 
 RUN pipx install poetry
-ENV PATH="/root/.local/bin:${PATH}"
+
+# Rust toolchain (cargo, rustc, rustfmt, clippy) via rustup
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable --profile default \
+ && /root/.cargo/bin/rustup component add rustfmt clippy
+
+ENV PATH="/root/.local/bin:/root/.cargo/bin:${PATH}"
 
 
 
