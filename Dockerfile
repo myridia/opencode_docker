@@ -36,6 +36,7 @@ RUN apt-get update -y && apt-get install -y \
   netcat-openbsd \
   nodejs \
   npm \
+  openjdk-17-jre-headless \
   pgcli \
   pkg-config \
   poppler-utils \
@@ -99,6 +100,9 @@ RUN python3 -m pip install --no-cache-dir --break-system-packages  --ignore-inst
 
 
 RUN pipx install poetry
+
+RUN mkdir -p /opt/vnu \
+ && curl -fsSL -o /opt/vnu/vnu.jar https://github.com/validator/validator/releases/latest/download/vnu.jar
 
 # Rust toolchain (cargo, rustc, rustfmt, clippy) via rustup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable --profile default \
