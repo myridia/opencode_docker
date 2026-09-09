@@ -36,7 +36,7 @@ RUN apt-get update -y && apt-get install -y \
   netcat-openbsd \
   nodejs \
   npm \
-  openjdk-17-jre-headless \
+  openjdk-21-jre-headless \
   pgcli \
   pkg-config \
   poppler-utils \
