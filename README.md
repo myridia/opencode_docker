@@ -29,6 +29,12 @@ docker build -t foo .
 ```
 kitty docker run -it --privileged -v /home/veto/ai:/root/ai  myridia/opencode bash
 ```
+
+### Example on Mac 
+```
+docker run -it --privileged -v /Users/veto/webs:/home/veto/webs  myridia/opencode bash
+```
+
 ## Enter into the Terminal
 ```
 opencode
