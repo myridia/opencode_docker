@@ -24,6 +24,7 @@ docker run -it --privileged myridia/opencode bash
 ## Structure
 - `Dockerfile` — main image with dev tools, Rust, Python, Node.js, Docker CLI
 - `entrypoint.sh` — starts dockerd + bash
+- `ask.sh` — task menu: build image, run (asks which host folder to share), status/stop/enter/remove
 - `Makefile` — build shortcuts
 - `proxy/` — proxychains/redsocks config
 - `example/` — usage examples and configs

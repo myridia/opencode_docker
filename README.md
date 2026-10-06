@@ -1,3 +1,4 @@
+<img src="opencode_docker.svg" alt="Docker Opencode" width="120">
 
 ## ![Docker Opencode](pages/public/img/icon_512x512.png) 
 
