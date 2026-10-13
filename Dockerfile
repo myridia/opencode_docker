@@ -4,7 +4,7 @@ MAINTAINER veto<veto@myridia.com>
 
 RUN wget -qO- https://files.openscad.org/OBS-Repository-Key.pub | tee /etc/apt/trusted.gpg.d/obs-openscad-nightly.asc
 RUN echo "deb https://download.opensuse.org/repositories/home:/t-paul/Debian_13/ ./" | tee /etc/apt/sources.list.d/openscad.list
-
+RUN ls /etc/apt/sources.list.d 
 RUN apt-get update -y && apt-get install -y openscad-nightly
 
 RUN apt-get install -y \
