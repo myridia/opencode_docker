@@ -1,6 +1,11 @@
 FROM debian:latest
 LABEL version="0.2"
 MAINTAINER veto<veto@myridia.com>
+
+RUN wget -qO- https://files.openscad.org/OBS-Repository-Key.pub | sudo tee /etc/apt/trusted.gpg.d/obs-openscad-nightly.asc
+RUN echo "deb https://download.opensuse.org/repositories/home:/t-paul/Debian_13/ ./" | sudo tee /etc/apt/sources.list.d/openscad.list
+
+
 RUN apt-get update -y && apt-get install -y \
   bat \
   build-essential \
@@ -73,7 +78,9 @@ RUN apt-get update -y && apt-get install -y \
   libxslt1-dev \
   libpq-dev \
   docker-cli \
-  docker.io
+  docker.io \
+  openscad-nightly 
+  
 
  
 
@@ -97,6 +104,7 @@ RUN python3 -m pip install --no-cache-dir --break-system-packages  --ignore-inst
   ruff \
   mypy \
   pipdeptree
+
 
 
 RUN pipx install poetry
