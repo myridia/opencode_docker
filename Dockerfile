@@ -1,13 +1,7 @@
 FROM debian:latest
 LABEL version="0.2"
 MAINTAINER veto<veto@myridia.com>
-
-RUN wget -qO- https://files.openscad.org/OBS-Repository-Key.pub | tee /etc/apt/trusted.gpg.d/obs-openscad-nightly.asc
-RUN echo "deb https://download.opensuse.org/repositories/home:/t-paul/Debian_13/ ./" | tee /etc/apt/sources.list.d/openscad.list
-RUN ls /etc/apt/sources.list.d 
-RUN apt-get update -y && apt-get install -y openscad-nightly
-
-RUN apt-get install -y \
+RUN apt-get update -y && apt-get install -y \
   bat \
   build-essential \
   chromium \
@@ -79,10 +73,14 @@ RUN apt-get install -y \
   libxslt1-dev \
   libpq-dev \
   docker-cli \
-  docker.io  
-  
+  docker.io
 
+RUN wget -qO /etc/apt/trusted.gpg.d/obs-openscad-nightly.asc https://files.openscad.org/OBS-Repository-Key.pub \
+ && echo "deb https://download.opensuse.org/repositories/home:/t-paul/Debian_13/ ./" > /etc/apt/sources.list.d/openscad.list \
+ && apt-get update -y \
+ && apt-get install -y --no-install-recommends openscad-nightly
  
+RUN ln -s /usr/bin/openscad-nightly /usr/bin/openscad
 
 RUN python3 -m pip install --no-cache-dir --break-system-packages  --ignore-installed urllib3 \
   requests \
@@ -105,8 +103,6 @@ RUN python3 -m pip install --no-cache-dir --break-system-packages  --ignore-inst
   mypy \
   pipdeptree
 
-
-
 RUN pipx install poetry
 
 RUN mkdir -p /opt/vnu \
@@ -117,8 +113,6 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --de
  && /root/.cargo/bin/rustup component add rustfmt clippy
 
 ENV PATH="/root/.local/bin:/root/.cargo/bin:${PATH}"
-
-
 
 RUN curl -fsSL https://opencode.ai/install | bash
 RUN . /root/.bashrc
