@@ -2,8 +2,8 @@ FROM debian:latest
 LABEL version="0.2"
 MAINTAINER veto<veto@myridia.com>
 
-RUN wget -qO- https://files.openscad.org/OBS-Repository-Key.pub | sudo tee /etc/apt/trusted.gpg.d/obs-openscad-nightly.asc
-RUN echo "deb https://download.opensuse.org/repositories/home:/t-paul/Debian_13/ ./" | sudo tee /etc/apt/sources.list.d/openscad.list
+RUN wget -qO- https://files.openscad.org/OBS-Repository-Key.pub | tee /etc/apt/trusted.gpg.d/obs-openscad-nightly.asc
+RUN echo "deb https://download.opensuse.org/repositories/home:/t-paul/Debian_13/ ./" | tee /etc/apt/sources.list.d/openscad.list
 
 
 RUN apt-get update -y && apt-get install -y \
