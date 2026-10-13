@@ -5,8 +5,9 @@ MAINTAINER veto<veto@myridia.com>
 RUN wget -qO- https://files.openscad.org/OBS-Repository-Key.pub | tee /etc/apt/trusted.gpg.d/obs-openscad-nightly.asc
 RUN echo "deb https://download.opensuse.org/repositories/home:/t-paul/Debian_13/ ./" | tee /etc/apt/sources.list.d/openscad.list
 
+RUN apt-get update -y && apt-get install -y openscad-nightly
 
-RUN apt-get update -y && apt-get install -y \
+RUN apt-get install -y \
   bat \
   build-essential \
   chromium \
@@ -78,8 +79,7 @@ RUN apt-get update -y && apt-get install -y \
   libxslt1-dev \
   libpq-dev \
   docker-cli \
-  docker.io \
-  openscad-nightly 
+  docker.io  
   
 
  
