@@ -14,6 +14,12 @@ if command -v dockerd >/dev/null 2>&1 && [ "$(id -u)" = "0" ]; then
   done
 fi
 
-nohup proxychains4 /root/.opencode/bin/opencode >"/var/log/opencode_$UNIQUE_ID.log" 2>&1 &
+#sed -i 's/^proxy_dns/#proxy_dns/' /etc/proxychains4.conf
+#sed -i 's/^#proxy_dns_old/proxy_dns_old/' /etc/proxychains4.conf
+#sleep 2
+
+#timeout 150 proxychains4 -f /etc/proxychains4.conf ping -c 10 myridia.com
+#nohup proxychains4 /root/.opencode/bin/opencode >"/var/log/opencode_$UNIQUE_ID.log" 2>&1 &
 sleep 2
+
 exec "$@"

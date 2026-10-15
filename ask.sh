@@ -27,6 +27,7 @@ until [ "$task" = "0" ]; do
 
   case "$task" in
     1)
+      export DOCKER_BUILDKIT=0
       docker build -t "$IMAGE" "$DIR" && echo "ok: built $IMAGE" || echo "FAIL: build"
       ;;
     2)
