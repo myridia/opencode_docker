@@ -2,7 +2,6 @@
 
 Docker Opencode
 
-
 ## How to use 
 1. Run this command in a OSC52-compatible terminal like Kitty, Wezterm or Alacritty
 ```
